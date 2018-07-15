@@ -1,5 +1,7 @@
 const WebSocket = require('ws');
 const http = require('http');
+var port = process.env.PORT || 8080;
+
 
 const server = http.createServer(function (request, response) {
     // process HTTP request. Since we're writing just WebSockets
@@ -30,4 +32,4 @@ wss.on('connection', function connection(ws) {
 
 });
 
-server.listen(8080);
+server.listen(port);
