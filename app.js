@@ -14,7 +14,7 @@ wss.on('connection', function connection(ws) {
         console.log('received: %s', message);
         // Broadcast to everyone else.
         wss.clients.forEach(function each(client) {
-            if (client !== ws && client.readyState === WebSocket.OPEN) {
+            if (/*client !== ws &&*/ client.readyState === WebSocket.OPEN) {
                 client.send(message);
             }
         });
