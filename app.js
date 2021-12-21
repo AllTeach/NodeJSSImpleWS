@@ -23,6 +23,7 @@ wss.on('connection', function connection(ws) {
         
     });
     ws.on('close', function (code, reason) {
+		//just another comment
         wss.clients.forEach(function each(client) {
             if (client !== ws && client.readyState === WebSocket.OPEN) {
                 client.send("client left:" + code );
